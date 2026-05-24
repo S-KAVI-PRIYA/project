@@ -1,0 +1,95 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background: white;
+    width: 45%;
+    margin: 60px auto;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.input-box {
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+}
+
+.input-box h3 {
+    color: #444;
+}
+
+input, select {
+    width: 85%;
+    padding: 12px;
+    margin: 10px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(45deg, #36d1dc, #5b86e5) border-box;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 28px;
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+#subjectList {
+    list-style: none;
+    padding: 0;
+}
+
+#subjectList li {
+    background: linear-gradient(45deg, #dfe9f3, #ffffff);
+    margin: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#subjectList button {
+    background: red;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+.plan-box {
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.subject-card {
+    background: linear-gradient(45deg, #43cea2, #185a9d);
+    color: white;
+    margin: 12px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+}
