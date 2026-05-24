@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Study Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>📘 AI Study Planner</h1>
+    <p style="color: gray;">Create your personalized smart study plan 🚀</p>
+
+    <!-- Add Subject -->
+    <div class="input-box">
+        <h3>➕ Add Subject</h3>
+
+        <input type="text" id="subjectName" placeholder="Enter Subject">
+
+        <select id="subjectDifficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+
+        <button onclick="addSubject()">Add Subject</button>
+    </div>
+
+    <!-- Subject List -->
+    <div class="input-box">
+        <h3>📚 Your Subjects</h3>
+        <ul id="subjectList"></ul>
+    </div>
+
+    <!-- Study Hours -->
+    <div class="input-box">
+        <h3>⏳ Study Hours Per Day</h3>
+        <input type="number" id="hours" placeholder="Enter Total Hours">
+    </div>
+
+    <button onclick="generatePlan()">✨ Generate Smart Plan</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
