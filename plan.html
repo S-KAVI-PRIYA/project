@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Plan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>📅 Your Smart Study Plan</h1>
+
+    <p style="color: gray;">
+        Generated using Python Flask Backend 🤖
+    </p>
+
+    <div id="plan" class="plan-box"></div>
+
+    <button onclick="goBack()">⬅ Back</button>
+
+</div>
+
+<script>
+
+async function generateFromBackend() {
+
+    let subjects = JSON.parse(localStorage.getItem("subjects"));
+
+    let hours = parseInt(localStorage.getItem("hours"));
+
+    try {
+
+        const res = await fetch("http://127.0.0.1:5000/generate-plan", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                subjects,
+                hours
+            })
+        });
+
+        const data = await res.json();
+
+        let output = "<h3>📘 Study Plan</h3>";
+
+        data.forEach(sub => {
+
+            let color = "🟢";
+
+            if(sub.difficulty === "medium")
+                color = "🟡";
+
+            if(sub.difficulty === "hard")
+                color = "🔴";
+
+            output += `
+
+                <div class="subject-card">
+
+                    ${color} <b>${sub.name}</b><br>
+
+                    Difficulty: ${sub.difficulty}<br>
+
+                    ⏱ Time: ${sub.time} hrs
+
+                </div>
+            `;
+        });
+
+        document.getElementById("plan").innerHTML = output;
+
+    }
+
+    catch(error) {
+
+        document.getElementById("plan").innerHTML = `
+
+            <p style="color:red;">
+
+            Backend not running! Start Flask server.
+
+            </p>
+        `;
+    }
+}
+
+function goBack() {
+
+    window.location.href = "index.html";
+}
+
+generateFromBackend();
+
+</script>
+
+</body>
+</html>
